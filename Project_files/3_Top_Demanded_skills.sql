@@ -1,5 +1,6 @@
 /*
-QUESTION: What are the most in demand skills for data analysts?
+QUESTION: What are the most in demand skills for data analysts interested
+          in working from home?
     -Identfy the top 5 in demand data analyst jobs skills.
     -Focus on all job postings
 WHY? Highlighting the highly demanded data analysts skills to help-
