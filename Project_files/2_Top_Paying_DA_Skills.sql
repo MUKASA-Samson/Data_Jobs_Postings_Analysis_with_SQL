@@ -34,4 +34,4 @@ FROM Top_Paying_Skills
 INNER JOIN skills_dim ON Top_Paying_Skills.skill_id = skills_dim.skill_id
 WHERE Skill_Counts > 10
 ORDER BY salary_avg DESC
-LIMIT 25;
+LIMIT 20;
