@@ -2,7 +2,7 @@
 # Job Market for Data Professionals (2023)
 
 This project analyzes real-world job posting data to provide insights into the current data professional job 
-market. The data, originally collected by Luke Brousse in 2023 from various job posting platforms, was processed, 
+market. The data, originally collected by Luke Barousse in 2023 from various job posting platforms, was processed, 
 analyzed, and visualized to answer key questions relevant to aspiring and current data professionals.
 
 ## Project Overview
@@ -22,7 +22,7 @@ This analysis focuses on answering the following key questions:
 
 ## Data Source
 
-The dataset used in this project was compiled by Luke Brousse in 2023. It consists of data scraped from various online job posting platforms. 
+The dataset used in this project was compiled by Luke Barousse in 2023. It consists of data scraped from various online job posting platforms. 
 The data was provided directly by Luke Brousse and now is available on his website, datanerd.tech.
 
 ## Technologies Used
@@ -31,3 +31,16 @@ The data was provided directly by Luke Brousse and now is available on his websi
 *   **SQL:** Used for data cleaning, transformation, and analysis within the PostgreSQL database (pgAdmin 4).
 *   **Tableau:** Used for data visualization and creating interactive dashboards.
 *   **VS Code:** Used for creating, testing and managing queries.
+
+## The Analysis
+### 1. Highly Demanded Roles and Their Yearly Average Salary
+### 2. Top Paying Skills for Data Roles
+### 3. Top Highly Demanded Skills for Data Roles
+### 4. Optimal Skills to Learn
+### 5. Job Platforms for Data Roles
+
+## Tableau Dashboard
+
+## What I Learned
+
+## Conclusion
