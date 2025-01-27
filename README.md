@@ -37,10 +37,11 @@ The data was provided directly by Luke Brousse and now is available on his websi
 ### 2. Top Paying Skills for Data Roles
 ### 3. Top Highly Demanded Skills for Data Roles
 ### 4. Optimal Skills to Learn
+![Optimal Skills to Learn](image-2.png)
 ### 5. Job Platforms for Data Roles
 
 ## Tableau Dashboard
-
+![Dashboard](Dashboard.png)
 ## What I Learned
 
 ## Conclusion
