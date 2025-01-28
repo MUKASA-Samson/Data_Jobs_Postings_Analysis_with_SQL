@@ -5,6 +5,20 @@ This project analyzes real-world job posting data to provide insights into the c
 market. The data, originally collected by Luke Barousse in 2023 from various job posting platforms, was processed, 
 analyzed, and visualized to answer key questions relevant to aspiring and current data professionals.
 
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Key Questions Addressed](#key-questions-addressed)
+3. [Data Source](#data-source)
+4. [Technologies Used](#technologies-used)
+5. [Data Cleaning](#data-cleaning)
+   - [Cleaning The Same Platforms written Differently and Removing the PREFIX 'Via' from all Platforms](#cleaning-the-same-platforms-written-differently-and-removing-the-prefix-via-from-all-platforms)
+   - [Calculating Yearly Average from Provided Hourly Rate to Remove NULLs](#calculating-yearly-average-from-provided-hourly-rate-to-remove-nulls)
+   - [Joins](#joins)
+6. [SQL Query Example](#sql-query-example)
+7. [Figures](#figures)
+8. [Tableau Dashboard](#tableau-dashboard)
+9. [What I Learned](#what-i-learned)
+10. [Conclusion](#conclusion)
 ## Project Overview
 
 This project aimed to understand the demand and compensation landscape for various data roles. By analyzing job postings, 
