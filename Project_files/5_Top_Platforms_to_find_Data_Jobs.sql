@@ -16,6 +16,7 @@ FROM job_postings_fact
 WHERE 
     job_title_short = 'Data Analyst' 
     AND job_work_from_home = TRUE
-GROUP BY job_via
+GROUP BY 
+    job_via
 ORDER BY counts DESC
 LIMIT 10;
