@@ -11,7 +11,7 @@ analyzed, and visualized to answer key questions relevant to aspiring and curren
 3. [Data Source](#data-source)
 4. [Technologies Used](#technologies-used)
 5. [Data Cleaning](#data-cleaning)
-   - [Cleaning The Same Platforms written Differently and Removing the PREFIX 'Via' from all Platforms](#cleaning-the-same-platforms-written-differently-and-removing-the-prefix-via-from-all-platforms)
+   - [Cleaning Platforms written Differently and Removing the PREFIX 'Via' from all Platforms](#cleaning-the-same-platforms-written-differently-and-removing-the-prefix-via-from-all-platforms)
    - [Calculating Yearly Average from Provided Hourly Rate to Remove NULLs](#calculating-yearly-average-from-provided-hourly-rate-to-remove-nulls)
    - [Joins](#joins)
 6. [SQL Query Example](#sql-query-example)
@@ -37,7 +37,7 @@ This analysis focuses on answering the following key questions:
 ## Data Source
 
 The dataset used in this project was compiled by Luke Barousse in 2023. It consists of data scraped from various online job posting platforms. 
-The data was provided directly by Luke Brousse and now is available on his website, datanerd.tech.
+The data was provided directly by Luke Barousse and now is available on his website, datanerd.tech.
 
 ## Technologies Used
 
@@ -46,10 +46,10 @@ The data was provided directly by Luke Brousse and now is available on his websi
 *   **Tableau:** Used for data visualization and creating interactive dashboards.
 *   **VS Code:** Used for creating, testing and managing queries.
 ## Data Cleaning
-### Cleaning The Same Platforms written Differently and Removing the PREFIX 'Via' from all Platforms.
+### Cleaning Platforms written Differently and Removing the PREFIX 'Via' from all Platforms.
 I selected unique platforms and discovered that 'LinkedIn' was written in different forms. So, I solved it by using the CASE function as shown in the query below.
 ```sql
-CASE
+   CASE
 			WHEN job_via LIKE ('%Linked%') THEN 'LinkedIn'
 			WHEN job_via NOT LIKE ('%Linked%') THEN TRIM(RIGHT(job_via,-3))
 	END AS Platform,
@@ -57,7 +57,7 @@ CASE
 ### Calculating Yearly Average from Provided Hourly rate to remove NULLS.
 Some job postings had only an hourly payment rate with no yearly salary average. To solve this, I took the provided hourly rate and multiplied it by the total working hours in a year, which is 2080. 
 ```sql
-CASE
+   CASE
 		WHEN salary_hour_avg IS NULL THEN ROUND(salary_year_avg)
 		WHEN salary_year_avg IS NULL THEN ROUND(salary_hour_avg * 2080)
 		WHEN salary_year_avg IS NULL AND salary_hour_avg IS NULL THEN NULL
@@ -86,19 +86,21 @@ SQL and Python also are leading as the top demanded skills on Job Market for dat
 *Figure 3: A Graph Showing Highly Demanded Skills for Data Roles.*
 
 ### 4. Optimal Skills to Learn
-These are the optimal skills to learn for aspiring data professionals. the skills are ordered based on their Annual Salary median and the highlighted skills are those that both found high paying and most demanded on job market. 
+These are the optimal skills to learn for aspiring data professionals. The skills are ordered based on their Annual Salary median and the highlighted skills are those that are both highly paying and most demanded on job market. 
 ![Optimal Skills to Learn](Optimal-Skills.png)
 *Figure 4: A Table Showing Top 10 High Paying and Demanded Skills on Data Job Market.*
 
 ### 5. Job Platforms for Data Roles
-Linked is ranked as the top platform that post many jobs for Data Professionals. The down below query shows how I got these insights.
+LinkedIn is ranked as the top platform that post many jobs for Data Professionals. The query below shows how I got these insights.
+
+Query
 ```sql
 SELECT 
-		CASE
-			WHEN job_via LIKE ('%Linked%') THEN 'LinkedIn'
-			WHEN job_via NOT LIKE ('%Linked%') THEN TRIM(RIGHT(job_via,-3))
-		END AS Platforms,
-    COUNT (*) AS counts
+   CASE
+		WHEN job_via LIKE ('%Linked%') THEN 'LinkedIn'
+		WHEN job_via NOT LIKE ('%Linked%') THEN TRIM(RIGHT(job_via,-3))
+   END AS Platforms,
+   COUNT (*) AS counts
 FROM job_postings_fact
 WHERE 
     job_title_short = 'Data Analyst' 
@@ -108,6 +110,7 @@ GROUP BY
 ORDER BY counts DESC
 LIMIT 10;
 ```
+Results
 ![Job Platforms](Platforms.png)
 *Figure 5: Top Platforms to find Jobs For Data Professionals.*
 
