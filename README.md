@@ -33,7 +33,7 @@ The data was provided directly by Luke Brousse and now is available on his websi
 *   **VS Code:** Used for creating, testing and managing queries.
 ## Data Cleaning
 ### Cleaning The Same Platforms written Differently and Removing the PREFIX 'Via' from all Platforms.
-I selected unique platforms and discovered that 'LinkedIn' was written in different forms. So, I solved it by using CASE function as shown in the Query below.
+I selected unique platforms and discovered that 'LinkedIn' was written in different forms. So, I solved it by using the CASE function as shown in the query below.
 ```sql
 CASE
 			WHEN job_via LIKE ('%Linked%') THEN 'LinkedIn'
@@ -41,7 +41,7 @@ CASE
 	END AS Platform,
 ```
 ### Calculating Yearly Average from Provided Hourly rate to remove NULLS.
-Some job postings had only Hourly payment rate with no Yearly Salary Average. To solve this, I took the provided hourly rate and multiplied it with total working hours in a year which is 2080. 
+Some job postings had only an hourly payment rate with no yearly salary average. To solve this, I took the provided hourly rate and multiplied it by the total working hours in a year, which is 2080. 
 ```sql
 CASE
 		WHEN salary_hour_avg IS NULL THEN ROUND(salary_year_avg)
@@ -50,7 +50,7 @@ CASE
 	END AS salary_year_average,
 ```
 ### Joins
-To be able to thoroughly analyze and relate data roles with respective skills from separated table, I used SQL joins. 
+To thoroughly analyze and relate data roles with their respective skills from separate tables, I used SQL joins.
 ```sql
 INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
 INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
@@ -105,5 +105,31 @@ This is the interactice Dasboard created from the insights driven from analysis 
 [Click here to access Interactive Dashboard on Tableu](https://public.tableau.com/shared/6KB63S326?:display_count=n&:origin=viz_share_link)
 
 ## What I Learned
+This project was a significant learning experience in multiple aspects of data analytics:
+
+1. **Data Cleaning and Transformation:** 
+   - Learned to handle messy data by standardizing formats (e.g., platform names) and filling in missing values (e.g., calculating yearly salaries from hourly rates).
+   - Mastered SQL CASE statements for conditional transformations and JOIN operations to combine multiple tables effectively.
+
+2. **SQL Skills:**
+   - Improved proficiency in using advanced SQL queries for data manipulation and analysis.
+   - Practiced writing efficient queries to handle large datasets and derive meaningful insights.
+
+3. **Data Visualization:**
+   - Enhanced skills in Tableau for creating interactive dashboards and visually communicating insights.
+   - Learned how to design clear, impactful visualizations tailored to specific questions and audiences.
+
+4. **Understanding the Job Market:**
+   - Gained a deep understanding of the data professional job landscape, including in-demand roles, top-paying skills, and key platforms for job opportunities.
+   - Recognized the importance of **Python** and **SQL** as foundational skills for aspiring data professionals.
+
+5. **Critical Thinking and Problem-Solving:**
+   - Developed the ability to ask meaningful questions and structure analysis to derive actionable insights.
+   - Tackled real-world challenges such as incomplete data and data inconsistencies.
 
 ## Conclusion
+This project provided valuable insights into the job market for data professionals in 2023, highlighting trends that can guide career decisions for aspiring analysts and established professionals alike. By leveraging SQL and Tableau, I was able to process and visualize the data effectively, turning raw job postings into actionable insights.
+
+The analysis underscored the importance of continuously developing in-demand skills such as Python, SQL, and data visualization tools. Additionally, platforms like LinkedIn emerged as critical resources for job seekers.
+
+Overall, this project not only deepened my technical expertise but also enhanced my understanding of how data analysis can address real-world questions, making it a pivotal step in my journey to becoming a general data analyst.
