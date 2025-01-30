@@ -5,7 +5,6 @@ QUESTION: Where to find remote Data Analytics Jobs?
 WHY? Highlighting the top platforms that post many Data Analytics jobs
      to help individuals who are looking for Data Analytics Jobs.
 */
-
 SELECT 
 		CASE
 			WHEN job_via LIKE ('%Linked%') THEN 'LinkedIn'

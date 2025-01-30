@@ -18,4 +18,4 @@ WHERE
 GROUP BY 
     skills
 ORDER BY skills_count DESC
-LIMIT 5;
+LIMIT 10;

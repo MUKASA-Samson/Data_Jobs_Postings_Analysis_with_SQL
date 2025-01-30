@@ -6,7 +6,6 @@ QUESTION: What are the top 10 highly paying and in demand work from home Data Jo
 WHY? Highlighting the highest paying and demanded data jobs for individuals interested in
  joining data analytics.
 */
-
 SELECT 
         DISTINCT(job_title_short),
         COUNT(*) AS Job_Counts,

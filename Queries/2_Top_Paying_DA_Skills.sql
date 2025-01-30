@@ -6,7 +6,6 @@ QUESTION: What are the top paying skills for Data Analysts looking for remote jo
 WHY? It reveals how different skills impact salary levels for Data Analysts 
 and helps to identify the most financially rewarding skills to acquire or improve.
 */
-
 WITH Top_Paying_Skills AS
 (
     SELECT
